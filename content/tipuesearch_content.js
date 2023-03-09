@@ -1,1 +1,1 @@
-var tipuesearch = {"pages": [{'title': 'About', 'text': 'members: \n 41023251 鄭立揚 \n github name:sdegbsvrtg \n 41023254 謝鴻元 \n github name:41023254', 'tags': '', 'url': 'About.html'}]};
+var tipuesearch = {"pages": [{'title': 'About', 'text': 'members: \n 41023251 鄭立揚 \n github name: sdegbsvrtg \n 41023254 謝鴻元 \n github name: 41023254 \n \n github page: https://mdecd2023.github.io/2b-pj1bg2', 'tags': '', 'url': 'About.html'}]};
