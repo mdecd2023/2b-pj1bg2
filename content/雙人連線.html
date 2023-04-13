@@ -142,7 +142,93 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">W8 << <a href='W8.html'>Previous</a> <a href='分組報告.html'>Next</a> >> 分組報告<br /><h1>雙人連線</h1>
-<p></p><br />W8 << <a href='W8.html'>Previous</a> <a href='分組報告.html'>Next</a> >> 分組報告</div>
+<p>以下為玩家1的程式碼</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># pip install pyzmq cbor
+from zmqRemoteApi import RemoteAPIClient
+import keyboard
+
+client = RemoteAPIClient('192.168.1.12', 23000)
+
+print('Program started')
+sim = client.getObject('sim')
+sim.startSimulation()
+print('Simulation started')
+
+def setBubbleRobVelocity(leftWheelVelocity, rightWheelVelocity):
+    leftMotor = sim.getObject('/leftMotor1')
+    rightMotor = sim.getObject('/rightMotor1')
+    sim.setJointTargetVelocity(leftMotor, leftWheelVelocity)
+    sim.setJointTargetVelocity(rightMotor, rightWheelVelocity)
+
+'''
+# Example usage 1:
+setBubbleRobVelocity(1.0, 1.0)
+time.sleep(2)
+setBubbleRobVelocity(0.0, 0.0)
+'''
+# use keyborad to move BubbleRob
+
+while True:
+    if keyboard.is_pressed('up'):
+        setBubbleRobVelocity(1.0, 1.0)
+    elif keyboard.is_pressed('down'):
+        setBubbleRobVelocity(-1.0, -1.0)
+    elif keyboard.is_pressed('left'):
+        setBubbleRobVelocity(-1.0, 1.0)
+    elif keyboard.is_pressed('right'):
+        setBubbleRobVelocity(1.0, -1.0)
+    elif keyboard.is_pressed('q'):
+        # stop simulation
+        sim.stopSimulation()
+    else:
+        setBubbleRobVelocity(0.0, 0.0)
+
+</pre>
+<p>以下為玩家2的程式碼</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">
+from zmqRemoteApi import RemoteAPIClient
+import keyboard
+
+client = RemoteAPIClient('192.168.1.13', 23000)
+
+print('Program started')
+sim = client.getObject('sim')
+sim.startSimulation()
+print('Simulation started')
+
+def setBubbleRobVelocity(leftWheelVelocity, rightWheelVelocity):
+    leftMotor = sim.getObject('/leftMotor2')
+    rightMotor = sim.getObject('/rightMoto2r')
+    sim.setJointTargetVelocity(leftMotor, leftWheelVelocity)
+    sim.setJointTargetVelocity(rightMotor, rightWheelVelocity)
+
+'''
+# Example usage 1:
+setBubbleRobVelocity(1.0, 1.0)
+time.sleep(2)
+setBubbleRobVelocity(0.0, 0.0)
+'''
+# use keyborad to move BubbleRob
+
+while True:
+    if keyboard.is_pressed('up'):
+        setBubbleRobVelocity(1.0, 1.0)
+    elif keyboard.is_pressed('down'):
+        setBubbleRobVelocity(-1.0, -1.0)
+    elif keyboard.is_pressed('left'):
+        setBubbleRobVelocity(-1.0, 1.0)
+    elif keyboard.is_pressed('right'):
+        setBubbleRobVelocity(1.0, -1.0)
+    elif keyboard.is_pressed('q'):
+        # stop simulation
+        sim.stopSimulation()
+    else:
+        setBubbleRobVelocity(0.0, 0.0)
+
+
+
+
+</pre><br />W8 << <a href='W8.html'>Previous</a> <a href='分組報告.html'>Next</a> >> 分組報告</div>
         
     <!-- footer -->
       <div class="container">
