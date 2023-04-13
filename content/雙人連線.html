@@ -142,6 +142,17 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">W8 << <a href='W8.html'>Previous</a> <a href='分組報告.html'>Next</a> >> 分組報告<br /><h1>雙人連線</h1>
+<p><a href="./../downloads/BubbleRob雙人對戰.7z">BubbleRob雙人對戰.7z</a></p>
+<p>操作原理:</p>
+<p>兩人連線到同一主機，同一阜號，分別控制同一場景中的兩隻機器人。</p>
+<p>在瀏覽器輸入http://192.168.1.xx:阜號，可看到進行中的場景</p>
+<p>(可在CMD輸入以下命令，查看自身IP位址)</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">ipconfig
+</pre>
+<p></p>
+<p></p>
+<p>圖為雙人對戰場景</p>
+<p><img alt="" height="433" src="./../images/12.png" width="800"/></p>
 <p>以下為玩家1的程式碼</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># pip install pyzmq cbor
 from zmqRemoteApi import RemoteAPIClient
@@ -185,8 +196,7 @@ while True:
 
 </pre>
 <p>以下為玩家2的程式碼</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">
-from zmqRemoteApi import RemoteAPIClient
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from zmqRemoteApi import RemoteAPIClient
 import keyboard
 
 client = RemoteAPIClient('192.168.1.13', 23000)
